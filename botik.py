@@ -51,12 +51,10 @@ def take_meme():
 @bot.message_handler(commands=['meme'])
 def send_meme(message):
     memu =take_meme()
-    title = memu.title
-    url = memu.url
     bot.send_photo(
         message.chat.id,
-        url,
-        title,
+        memu.url,
+        memu.title,
         )
 
 
